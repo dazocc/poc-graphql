@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "da199307-13ff-4c45-a380-e66afaa93823",
+		"name": "POC-Graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3947163"
+	},
+	"item": [
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    createPost(content: \"meu segundo post\"){\n        id, \n        content\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    postById(id: \"7cd20bc1-48b2-4422-b26b-2f807a9f1842\"){\n        id, \n        content\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    createComment(content: \"meu primeiro comment\", postId: \"7cd20bc1-48b2-4422-b26b-2f807a9f1842\"){\n        id, \n        content,\n        postId\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
