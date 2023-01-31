@@ -1,4 +1,4 @@
-package br.com.dazo.pocgraphql;
+package br.com.dazo.pocgraphql.forum;
 
 import org.springframework.stereotype.Service;
 
@@ -21,6 +21,11 @@ class PostService {
     Post postById(String id){
         return posts.get(id);
     }
+
+    Post deletePost(String id){
+        return posts.remove(id);
+    }
+
 }
 
 @Service
@@ -38,5 +43,9 @@ class CommentService {
         return comments.values().stream()
                 .filter(comment -> comment.postId().equals(postId))
                 .toList();
+    }
+
+    Comment deleteComment(String id){
+        return comments.remove(id);
     }
 }

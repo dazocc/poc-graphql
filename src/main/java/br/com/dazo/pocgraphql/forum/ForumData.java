@@ -1,4 +1,4 @@
-package br.com.dazo.pocgraphql;
+package br.com.dazo.pocgraphql.forum;
 
 record Post(String id, String content) {
 }
